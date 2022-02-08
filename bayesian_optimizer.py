@@ -64,6 +64,6 @@ def bayesian_optimization(X, y, n_iterations, known_param_values, known_result_v
         plt.show()
 
 
-def positive_probability_of_improvement(best_observed, y, y_std):
-    poi = lambda mean_a, mean_b, sigma_b: np.log(1 - norm.cdf(mean_a, loc=mean_b, scale=sigma_b))
+def probability_of_improvement(best_observed, y, y_std):
+    poi = lambda mean_a, mean_b, sigma_b: 1 - norm.cdf(mean_a, loc=mean_b, scale=sigma_b)
     return [poi(best_observed, y_i, std_y_i) for y_i, std_y_i in zip(y, y_std)]
