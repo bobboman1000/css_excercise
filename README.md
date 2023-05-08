@@ -1,4 +1,4 @@
-# Excercise - Context-aware systems
+# Small showcase project for class: Context-aware systems
 
 Demonstration of a context sensitive app. 
 
